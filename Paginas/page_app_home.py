@@ -1,7 +1,8 @@
+# Arquivo: main.py ou Home.py
 import tkinter as tk
 import threading
-
 from Utils.CameraUtils.camera_utils import start_camera_stream
+from Utils.move_servo import move_servo
 
 
 class Home(tk.Frame):
@@ -57,6 +58,8 @@ class Home(tk.Frame):
     def rodar_teste(self):
         print("Rodando teste...")
         self.atualizar_log("Rodando teste...")
+        # Chama a função para mover o servo (exemplo: pino 17, ângulo 90)
+        move_servo(17, 90)  # Chama a função com parâmetros (pino, ângulo)
 
     def testar_camera(self):
         print("Testando a câmera...")
